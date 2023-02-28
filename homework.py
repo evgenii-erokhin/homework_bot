@@ -32,9 +32,7 @@ HOMEWORK_VERDICTS = {
 
 
 def check_tokens():
-    """Проверяет доступность переменных окружения.
-       которые необходимы для работы программы.
-    """
+    """Проверяет доступность переменных окружения."""
     return all((PRACTICUM_TOKEN, TELEGRAM_TOKEN, TELEGRAM_CHAT_ID))
 
 
@@ -88,9 +86,7 @@ def check_response(response):
 # подготовленную для отправки в Telegram строку, содержащую один
 # из вердиктов словаря HOMEWORK_VERDICTS
 def parse_status(homework):
-    """Извлекает из информации о конкретной домашней работе.
-       статус этой работы.
-    """
+    """Извлекает статус домашней работы."""
     if 'status' not in homework:
         raise KeyError('В homework отсутсвует ключ status')
     homework_status = homework.get('status')
@@ -109,13 +105,12 @@ def parse_status(homework):
 
 def main():
     """Основная логика работы бота.
-       1. Сделать запрос к API.
-       2. Проверить ответ.
-       3. Если есть обновления — получить статус работы из обновления
+       1.Сделать запрос к API.
+       2.Проверить ответ.
+       3.Если есть обновления — получить статус работы из обновления
        и отправить сообщение в Telegram.
-       4. Подождать некоторое время и вернуться в пункт 1..
+       4.Подождать некоторое время и вернуться в пункт 1..
     """
-
     logging.basicConfig(
         level=logging.DEBUG,
         filename='main.log',
