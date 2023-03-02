@@ -84,7 +84,6 @@ def check_response(response: dict) -> list:
     В качестве параметра функция получает ответ API,
     приведенный к типам данных Python.
     """
-
     if not isinstance(response, dict):
         raise TypeError('Ответ API не был преобразован в словарь')
 
