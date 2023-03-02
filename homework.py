@@ -145,8 +145,7 @@ def main() -> None:
         raise SystemExit
 
     bot = telegram.Bot(token=TELEGRAM_TOKEN)
-    # timestamp = int(time.time())
-    timestamp = 1672133406
+    timestamp = int(time.time())
 
     while True:
         try:
