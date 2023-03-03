@@ -42,10 +42,11 @@ def send_message(bot: telegram.Bot, message: str) -> None:
     """
     try:
         bot.send_message(chat_id=TELEGRAM_CHAT_ID, text=message)
-        logging.debug('Сообщение успешно отправленно.')
 
     except telegram.error.TelegramError as error:
         logging.error(f'Не удалось отправть сообщение - {error}')
+    else:
+        logging.debug('Сообщение успешно отправленно.')
 
 
 def get_api_answer(timestamp: int) -> dict:
@@ -87,11 +88,12 @@ def check_response(response: dict) -> list:
     if not isinstance(response, dict):
         raise TypeError('Ответ API не был преобразован в словарь')
 
-    if 'homeworks' in response and 'current_date' in response:
-        homeworks = response['homeworks']
-    else:
-        raise KeyError('В ответе API нет ключей homeworks и current_date')
+    if 'homeworks' not in response:
+        raise KeyError('В ответе API нет ключа homeworks')
+    if 'current_date' not in response:
+        raise KeyError('В ответе API нет ключа current_date')
 
+    homeworks = response['homeworks']
     if not isinstance(homeworks, list):
         raise TypeError('В ответе API домашней работы под ключом homeworkorks'
                         'данные приходят не в виде списка')
@@ -108,6 +110,9 @@ def parse_status(homework: dict) -> str:
     подготовленную для отправки в Telegram строку, содержащую один
     из вердиктов словаря HOMEWORK_VERDICTS
     """
+    if not isinstance(homework, dict):
+        raise TypeError('Параметр homework не является словарем')
+
     if 'status' not in homework:
         raise KeyError('В homework отсутсвует ключ status')
     homework_status = homework.get('status')
