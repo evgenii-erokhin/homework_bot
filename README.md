@@ -5,15 +5,19 @@
 ### Используемые технологии:
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ## Как запустить проект:
+1. Создать виртуальное окружение.
 ```
 python -m venv venv
 ```
+2. Активировать виртуальное окружение.
 ```
 source venv/Scripts/activate
 ```
+3. Установить завистимости.
 ```
 pip install requirements.txt
 ```
+4. Запустить файл `homework.py`
 ```
 python homework.py
 ```
