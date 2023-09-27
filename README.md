@@ -5,19 +5,35 @@
 ### Используемые технологии:
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ## Как запустить проект:
-1. Создать виртуальное окружение.
+1. В корне проекта создать файл `.env` и заполнить его по шаблону
 ```
-python -m venv venv
+PRACTICUM_TOKEN=<Token от ЯП API> 
+TELEGRAM_TOKEN=<Token Вашего Телеграм бота> 
+TELEGRAM_CHAT_ID=<Ваш chat_id>
 ```
-2. Активировать виртуальное окружение.
-```
-source venv/Scripts/activate
-```
-3. Установить завистимости.
+2. Находясь в корне проекта создать виртуальное окружение.
+- Win:
+  ```
+  python -m venv venv
+  ```
+- Linux/MacOs:
+  ```
+  python3 -m venv venv
+  ```
+3. Активировать виртуальное окружение.
+- Win:
+  ```
+  source venv/Scripts/activate
+  ```
+- Linux/MacOs:
+  ```
+  source venv/bib/activate
+  ```
+4. Установить завистимости.
 ```
 pip install requirements.txt
 ```
-4. Запустить файл `homework.py`
+5. Запустить файл `homework.py`
 ```
 python homework.py
 ```
