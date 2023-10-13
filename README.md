@@ -4,6 +4,7 @@
 
 ### Используемые технологии:
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+<img src="https://img.shields.io/badge/Python_Telegram_Bot-blue?style=for-the-badge&logo=python telegram bot&logoColor=green"/>
 ## Как запустить проект:
 1. В корне проекта создать файл `.env` и заполнить его по шаблону
 ```
