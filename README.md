@@ -1,6 +1,8 @@
 # Статсус-чекер бот
 ### Описание:
-Телеграм бот для проверки статуса работы после ревью в ЯП. Работает с API Яндекс Практикума
+Телеграм бот для проверки статуса работы после ревью в ЯП. Работает с API Яндекс Практикума.
+Получить токен для работы с API Яндекс Практикума можно <a href="https://oauth.yandex.ru/authorize?
+response_type=token&client_id=1d0b9dd4d652455a9eb710d450ff456a.">тут</a>
 
 ### Используемые технологии:
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
